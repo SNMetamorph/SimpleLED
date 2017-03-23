@@ -20,7 +20,7 @@ At first, download this git at .zip (click <a href="https://github.com/SNMetamor
 <b>void SetHSVColor (double hue, double saturation, double brightness)</b> - setting color for every channel using HSV color model.<br>
 <b>bool SetDefColor(int num)</b> - setting defined color (see Defined colors topic).<br>
 <b>void SetBrightness (float value)</b> - setting brightness for all color channels.<br>
-<b>void Flush()</b> - off all color channels, equal to SetColor(0, 0, 0).<br>
+<b>void Flush()</b> - turn off all color channels, equal to SetColor(0, 0, 0).<br>
 
 # Defined colors
 Topic struct: color define name - integer number of color - SetColor() equal.<br>
