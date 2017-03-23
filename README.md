@@ -31,7 +31,7 @@ SL_GREEN - 2 - obj.SetColor(0, 255, 0)<br>
 SL_BLUE - 3 - obj.SetColor(0, 0, 255)<br>
 
 # Using example
-```wiring
+```c++
 #include <SimpleLED.h>
 
 const int led[3] = {3, 5, 6}; // using pin 3 - for red, 5 - for green, 6 - for blue, pins must be digital PWM.
