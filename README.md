@@ -23,9 +23,9 @@ At first, download this git at .zip (click <a href="https://github.com/SNMetamor
 <b>void Flush()</b> - off all color channels, equal to SetColor(0, 0, 0).<br>
 
 # Defined colors
-Topic struct: color define name - integer number of color - SetColor() equal
-Example of using defines in code: obj.SetDefColor(SL_GREEN) or obj.SetDefColor(2)
-SL_WHITE - 0 - obj.SetColor(255, 255, 255)
-SL_RED - 1 - obj.SetColor(255, 0, 0)
-SL_GREEN - 2 - obj.SetColor(0, 255, 0)
-SL_BLUE - 3 - obj.SetColor(0, 0, 255)
+Topic struct: color define name - integer number of color - SetColor() equal.
+Example of using defines in code: obj.SetDefColor(SL_GREEN) or obj.SetDefColor(2).
+SL_WHITE - 0 - obj.SetColor(255, 255, 255)<br>
+SL_RED - 1 - obj.SetColor(255, 0, 0)<br>
+SL_GREEN - 2 - obj.SetColor(0, 255, 0)<br>
+SL_BLUE - 3 - obj.SetColor(0, 0, 255)<br>
