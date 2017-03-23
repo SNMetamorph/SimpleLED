@@ -10,8 +10,9 @@ Scheme for using with strip:
 Scheme for using with LEDs group:
 
 ![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/ledscheme.png?raw=true)
+
 # Installation
-At first, download this git at .zip
+At first, download this git at .zip (click <a href="https://github.com/SNMetamorph/SimpleLED">this</a> -> click Clone or download -> Download ZIP). Open Arduino IDE -> click "Sketch" menu -> Include Library -> Add .ZIP Library -> find and select downloaded zip-file
 
 # Functions
 <b>void SetColor (int red, int green, int blue)</b> - setting color value for every channel.<br>
