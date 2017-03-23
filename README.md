@@ -29,3 +29,27 @@ SL_WHITE - 0 - obj.SetColor(255, 255, 255)<br>
 SL_RED - 1 - obj.SetColor(255, 0, 0)<br>
 SL_GREEN - 2 - obj.SetColor(0, 255, 0)<br>
 SL_BLUE - 3 - obj.SetColor(0, 0, 255)<br>
+
+# Using example
+<code>
+#include <SimpleLED.h>
+
+const int led[3] = {3, 5, 6}; // using pin 3 - for red, 5 - for green, 6 - for blue, pins must be digital PWM.
+SimpleLED diode(led);
+
+float progress = 0;
+float val = 0.025;
+
+void setup() 
+{
+  diode.SetDefColor(SL_WHITE); // set all colors for maximum
+}
+
+void loop() 
+{
+  diode.SetBrightness(progress); // set new brightness at every iteration
+  progress = progress + val;
+  if (progress <= 0 || progress >= 255) {
+    val = -val;
+}
+</code>
