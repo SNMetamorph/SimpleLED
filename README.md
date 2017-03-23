@@ -10,6 +10,8 @@ Scheme for using with strip:
 Scheme for using with LEDs group:
 
 ![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/ledscheme.png?raw=true)
+# Installation
+At first, download this git at .zip
 
 # Functions
 <b>void SetColor (int red, int green, int blue)</b> - setting color value for every channel.<br>
@@ -17,3 +19,5 @@ Scheme for using with LEDs group:
 <b>bool SetDefColor(int num)</b> - setting defined color (see Color defines topic).<br>
 <b>void SetBrightness (float value)</b> - setting brightness for all color channels.<br>
 <b>void Flush()</b> - off all color channels, equal to SetColor(0, 0, 0).<br>
+
+
