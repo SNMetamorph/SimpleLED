@@ -3,7 +3,7 @@ This library allows you to control LEDs, library includes these functions: defin
 
 # Schematic
 You may using this library for LED strips or LEDs group. Also, you need to make scheme given below for controlling LED strips.
-Scheme for using with strips:
+Scheme for using with strip:
 
 ![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/mosfetscheme.png?raw=true)
 
@@ -12,3 +12,4 @@ Scheme for using with LEDs group:
 ![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/ledscheme.png?raw=true)
 
 # Functions
+<b>void SetColor (int r, int g, int b)</b> - setting color for every channel
