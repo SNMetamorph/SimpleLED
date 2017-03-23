@@ -7,4 +7,5 @@ Scheme for using with strips:
 ![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/mosfetscheme.png?raw=true)
 
 Scheme for using with LED group:
+
 ![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/ledscheme.png?raw=true)
