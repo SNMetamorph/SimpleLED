@@ -2,8 +2,8 @@
 This library allows you to control LEDs, library includes these functions: defined or manual RGB and HSV color setting, brigthness adjustment. For using it you need have 3 free digital PWM pins (3, 5, 6 for example).
 
 # Schematic
-You may using this library for LED strips or LEDs group. Also, for controlling LED strips you need to make scheme given below three times for every color channel.
-Warning! Use only suitable voltage power supplies, otherwise you risk to burn your LED strip.
+You may using this library for LED strips or LEDs group. Also, for controlling LED strips you need to make scheme given below three times for every color channel.<br>
+Warning! Use only suitable voltage power supplies, otherwise you risk to burn your LED strip.<br>
 Scheme for using with strip:
 
 ![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/mosfetscheme.png?raw=true)
