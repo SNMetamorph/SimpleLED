@@ -13,7 +13,7 @@ Scheme for using with LEDs group:
 ![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/ledscheme.png?raw=true)
 
 # Installation
-At first, download this git at .zip (click <a href="https://github.com/SNMetamorph/SimpleLED">this</a> -> click Clone or download -> Download ZIP). Open Arduino IDE -> click "Sketch" menu -> Include Library -> Add .ZIP Library -> find and select downloaded zip-file. Installing completed.
+At first, download this git at .zip (click <a href="https://github.com/SNMetamorph/SimpleLED">this</a> -> click Clone or download -> Download ZIP). Open Arduino IDE -> click "Sketch" menu -> Include Library -> Add .ZIP Library -> find and select downloaded zip-file.<br> Installing completed.
 
 # Functions
 <b>void SetColor (int red, int green, int blue)</b> - setting color value for every channel.<br>
@@ -23,7 +23,7 @@ At first, download this git at .zip (click <a href="https://github.com/SNMetamor
 <b>void Flush()</b> - off all color channels, equal to SetColor(0, 0, 0).<br>
 
 # Defined colors
-Topic struct: color define name - integer number of color - SetColor() equal.
+Topic struct: color define name - integer number of color - SetColor() equal.<br>
 Example of using defines in code: obj.SetDefColor(SL_GREEN) or obj.SetDefColor(2).<br>
 SL_WHITE - 0 - obj.SetColor(255, 255, 255)<br>
 SL_RED - 1 - obj.SetColor(255, 0, 0)<br>
