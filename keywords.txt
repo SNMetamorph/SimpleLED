@@ -1,0 +1,25 @@
+#######################################
+# Syntax Coloring Map For SimpleLED
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+SimpleLED	KEYWORD1	SimpleLED
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+SetColor	KEYWORD2
+SetHSVColor	   KEYWORD2
+SetBrightness	KEYWORD2
+Flush	KEYWORD2
+SetDefColor    KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+#######################################
+# Constants (LITERAL1)
+#######################################
