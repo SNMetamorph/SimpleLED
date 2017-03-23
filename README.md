@@ -12,4 +12,8 @@ Scheme for using with LEDs group:
 ![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/ledscheme.png?raw=true)
 
 # Functions
-<b>void SetColor (int r, int g, int b)</b> - setting color for every channel
+<b>void SetColor (int red, int green, int blue)</b> - setting color value for every channel.
+<b>void SetHSVColor (double hue, double saturation, double brightness)</b> - setting color for every channel using HSV color model.
+<b>bool SetDefColor(int num)</b> - setting defined color (see Color defines topic). 
+<b>void SetBrightness (float value)</b> - setting brightness for all color channels.
+<b>void Flush()</b> - off all color channels, equal to SetColor(0, 0, 0).
