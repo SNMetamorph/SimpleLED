@@ -4,11 +4,14 @@
 SimpleLED::SimpleLED(const int arr[3]) 
 {
 	this->brightness = 255;
+	for (int i = 0; i < 3; i++)
+		this->backcol[i] = 0;
 	memcpy(this->ledarray, arr, sizeof(arr) * 3);
 	for (int i = 0; i < 3; i++) 
 	{
 	   pinMode(arr[i], OUTPUT);     
 	}
+	this->Flush();
 }
 
 void SimpleLED::SetColor(int r, int g, int b)
