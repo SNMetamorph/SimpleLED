@@ -1,6 +1,31 @@
 # SimpleLED
 This library allows you to control LEDs using Arduino, library includes these functions: defined or manual RGB and HSV color setting, brigthness adjustment. For using it you need have 3 free digital PWM pins (3, 5, 6 for example).
 
+# Using example
+```c++
+#include <SimpleLED.h>
+
+const int led[3] = {3, 5, 6}; // using pin 3 - for red, 5 - for green, 6 - for blue, pins must be digital PWM.
+SimpleLED diode(led);
+
+float progress = 0;
+float val = 0.025;
+
+void setup() 
+{
+  diode.SetDefColor(SL_WHITE); // set all colors for maximum
+}
+
+void loop() 
+{
+  diode.SetBrightness(progress); // set new brightness at every iteration
+  progress = progress + val;
+  if (progress <= 0 || progress >= 255) {
+    val = -val;
+  }
+}
+```
+
 # Schematic
 You may using this library for LED strips or LEDs group. Also, for controlling LED strips you need to make scheme given below three times for every color channel.<br>
 Warning! Use only suitable voltage power supplies, otherwise you risk to burn your LED strip.<br>
@@ -30,27 +55,3 @@ SL_RED - 1 - obj.SetColor(255, 0, 0)<br>
 SL_GREEN - 2 - obj.SetColor(0, 255, 0)<br>
 SL_BLUE - 3 - obj.SetColor(0, 0, 255)<br>
 
-# Using example
-```c++
-#include <SimpleLED.h>
-
-const int led[3] = {3, 5, 6}; // using pin 3 - for red, 5 - for green, 6 - for blue, pins must be digital PWM.
-SimpleLED diode(led);
-
-float progress = 0;
-float val = 0.025;
-
-void setup() 
-{
-  diode.SetDefColor(SL_WHITE); // set all colors for maximum
-}
-
-void loop() 
-{
-  diode.SetBrightness(progress); // set new brightness at every iteration
-  progress = progress + val;
-  if (progress <= 0 || progress >= 255) {
-    val = -val;
-  }
-}
-```
