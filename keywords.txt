@@ -13,9 +13,9 @@ SimpleLED	KEYWORD1	SimpleLED
 
 SetColor	KEYWORD2
 SetHSVColor	   KEYWORD2
+SetDefColor    KEYWORD2
 SetBrightness	KEYWORD2
 Flush	KEYWORD2
-SetDefColor    KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)
