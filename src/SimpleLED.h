@@ -12,8 +12,8 @@ class SimpleLED
       void SetBrightness(float value) ;
       void Flush();
       bool SetDefColor(int num);
-	private:
-	  int ledarray[3];
+    private:
+      int ledarray[3];
       float brightness;
       byte backcol[3];
 };
