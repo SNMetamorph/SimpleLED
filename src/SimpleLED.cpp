@@ -1,77 +1,86 @@
 #include "Arduino.h"
 #include "SimpleLED.h"
 
-SimpleLED::SimpleLED(const int arr[3]) 
+SimpleLED::SimpleLED(int arr[3]) 
 {
 	this->brightness = 255;
-	for (int i = 0; i < 3; i++)
+	for (register int i = 0; i < 3; i++)
 		this->backcol[i] = 0;
 	memcpy(this->ledarray, arr, sizeof(arr) * 3);
-	for (int i = 0; i < 3; i++) 
-	{
-	   pinMode(arr[i], OUTPUT);     
-	}
+	for (register int i = 0; i < 3; i++)
+	   pinMode(arr[i], OUTPUT);
 	this->Flush();
 }
 
-void SimpleLED::SetColor(int r, int g, int b)
+void SimpleLED::SetColor(byte r, byte g, byte b)
 {
-	int arr[3] = {r, g, b};
-	for (int i = 0; i < 3; i++)
+	byte arr[3] = {r, g, b};
+	for (register int i = 0; i < 3; i++)
 	{
-	  analogWrite(this->ledarray[i], (int)(arr[i] * (brightness / 255.0)));
+	  analogWrite(this->ledarray[i], arr[i] * (brightness / 255.0));
 	}
 	memcpy(this->backcol, arr, sizeof(arr) * 3);
+	char debug[128];
+	sprintf(debug, "%i | %i | %i", arr[0], arr[1], arr[2]);
+	Serial.println(debug);
 }
 
-void SimpleLED::SetHSVColor(double H, double S, double V)
+void SimpleLED::SetHSVColor(float h, float s, float v) 
 {
-  double P, Q, T, fract;
-  float R, G, B;
+  int i;
+  float f, p, q, t;
+  byte r, g, b;
+  
+  h = max(0.0, min(360.0, h));
+  s = max(0.0, min(100.0, s));
+  v = max(0.0, min(100.0, v));
+  
+  s /= 100;
+  v /= 100;
+  
+  if(s == 0) {
+	r = g = b = round(v*255); // Achromatic (grey) 
+    return;
+  }
 
-  (H == 360.)?(H = 0.):(H /= 60.);
-  fract = H - floor(H);
-
-  P = V*(1. - S);
-  Q = V*(1. - S*fract);
-  T = V*(1. - S*(1. - fract));
-
-  if (0. <= H && H < 1.) {
-	R = V; 
-	G = T; 
-	B = P;
-  }
-  else if (1. <= H && H < 2.) {
-	R = Q; 
-	G = V; 
-	B = P;
-  }
-  else if (2. <= H && H < 3.) {
-	R = P; 
-	G = V; 
-	B = T;
-  }
-  else if (3. <= H && H < 4.) {
-	R = P; 
-	G = Q; 
-	B = V;
-  }
-  else if (4. <= H && H < 5.) {
-	R = T;
-	G = P;
-	B = V;
-  }
-  else if (5. <= H && H < 6.) {
-	R = V; 
-	G = P; 
-	B = Q;
-  }
-  else {
-	R = 0.0;
-	G = 0.0;
-	B = 0.0;
-  }
-  this->SetColor((int)(R * 255.0), (int)(G * 255.0), (int)(B * 255.0));
+  h /= 60; // sector 0 to 5
+  i = floor(h);
+  f = h - i; // factorial part of h
+  p = v * (1 - s);
+  q = v * (1 - s * f);
+  t = v * (1 - s * (1 - f));
+  switch(i) {
+    case 0:
+      r = round(255*v);
+      g = round(255*t);
+      b = round(255*p);
+      break;
+    case 1:
+      r = round(255*q);
+      g = round(255*v);
+      b = round(255*p);
+      break;
+    case 2:
+      r = round(255*p);
+      g = round(255*v);
+      b = round(255*t);
+      break;
+    case 3:
+      r = round(255*p);
+      g = round(255*q);
+      b = round(255*v);
+      break;
+    case 4:
+      r = round(255*t);
+      g = round(255*p);
+      b = round(255*v);
+      break;
+    default:
+      r = round(255*v);
+      g = round(255*p);
+      b = round(255*q);
+    }
+	this->SetColor(r, g, b);
 }
 
 void SimpleLED::SetBrightness(float value) 
@@ -87,7 +96,7 @@ void SimpleLED::Flush()
 
 bool SimpleLED::SetDefColor(int num)
 {
-	int clrarr[3];
+	byte clrarr[3];
 	switch(num) 
 	{
 	  case 0: 
