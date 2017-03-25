@@ -20,9 +20,6 @@ void SimpleLED::SetColor(byte r, byte g, byte b)
 	  analogWrite(this->ledarray[i], arr[i] * (brightness / 255.0));
 	}
 	memcpy(this->backcol, arr, sizeof(arr) * 3);
-	char debug[128];
-	sprintf(debug, "%i | %i | %i", arr[0], arr[1], arr[2]);
-	Serial.println(debug);
 }
 
 void SimpleLED::SetHSVColor(float h, float s, float v) 
