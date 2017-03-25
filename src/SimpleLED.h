@@ -9,7 +9,7 @@ class SimpleLED
       SimpleLED(int arr[3]);
       void SetColor(byte r, byte g, byte b);
       void SetHSVColor(float h, float s, float v);
-      void SetBrightness(float value) ;
+      void SetBrightness(float value);
       void Flush();
       bool SetDefColor(int num);
     private:
