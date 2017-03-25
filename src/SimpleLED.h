@@ -6,14 +6,14 @@
 class SimpleLED 
 {
     public:            
-      SimpleLED (const int arr[3]);
-      void SetColor (int r, int g, int b);
-      void SetHSVColor(double H, double S, double V);
-      void SetBrightness (float value) ;
+      SimpleLED(int arr[3]);
+      void SetColor(byte r, byte g, byte b);
+      void SetHSVColor(float h, float s, float v);
+      void SetBrightness(float value) ;
       void Flush();
       bool SetDefColor(int num);
 	private:
 	  int ledarray[3];
       float brightness;
-      int backcol[3];
+      byte backcol[3];
 };
