@@ -5,7 +5,7 @@ This library allows you to control LEDs using Arduino, library includes these fu
 ```c++
 #include <SimpleLED.h>
 
-const int led[3] = {3, 5, 6}; // using pin 3 - for red, 5 - for green, 6 - for blue, pins must be digital PWM.
+int led[3] = {3, 5, 6}; // using pin 3 - for red, 5 - for green, 6 - for blue, pins must be digital PWM.
 SimpleLED diode(led);
 
 float progress = 0;
@@ -41,10 +41,10 @@ Scheme for using with LEDs group:
 At first, download this git at .zip (click <a href="https://github.com/SNMetamorph/SimpleLED">this</a> -> click Clone or download -> Download ZIP). Open Arduino IDE -> click "Sketch" menu -> Include Library -> Add .ZIP Library -> find and select downloaded zip-file.<br> Installing completed.
 
 # Functions
-<b>void SetColor (int red, int green, int blue)</b> - setting color value for every channel.<br>
-<b>void SetHSVColor (double hue, double saturation, double brightness)</b> - setting color for every channel using HSV color model.<br>
+<b>void SetColor(byte red, byte green, byte blue)</b> - setting color value for every channel.<br>
+<b>void SetHSVColor(float hue, float saturation, float brightness)</b> - setting color for every channel using HSV color model.<br>
 <b>bool SetDefColor(int num)</b> - setting defined color (see Defined colors topic).<br>
-<b>void SetBrightness (float value)</b> - setting brightness for all color channels.<br>
+<b>void SetBrightness(float value)</b> - setting brightness for all color channels.<br>
 <b>void Flush()</b> - turn off all color channels, equal to SetColor(0, 0, 0).<br>
 
 # Defined colors
