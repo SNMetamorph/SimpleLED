@@ -5,9 +5,7 @@ This library allows you to control LEDs using Arduino, library includes these fu
 ```c++
 #include <SimpleLED.h>
 
-int led[3] = {3, 5, 6}; // using pin 3 - for red, 5 - for green, 6 - for blue, pins must be digital PWM.
-SimpleLED diode(led);
-
+SimpleLED diode(3, 5, 6); // using pin 3 - for red, 5 - for green, 6 - for blue, pins must be digital PWM.
 float progress = 0;
 float val = 0.025;
 
