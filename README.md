@@ -42,7 +42,7 @@ At first, download this git at .zip (click <a href="https://github.com/SNMetamor
 <b>void SetColor(byte red, byte green, byte blue)</b> - setting color value for every channel.<br>
 <b>void SetHSVColor(float hue, float saturation, float brightness)</b> - setting color for every channel using HSV color model.<br>
 <b>bool SetDefColor(int num)</b> - setting defined color (see Defined colors topic).<br>
-<b>SL_RGB GetColor() - return the structure with last specified color (about SL_RGB see topic Structures).<br>
+<b>SL_RGB GetColor()</b> - return the structure with last specified color (about SL_RGB see topic Structures).<br>
 <b>void SetBrightness(float value)</b> - setting brightness for all color channels.<br>
 <b>void Flush()</b> - turn off all color channels, equal to SetColor(0, 0, 0).<br>
 
