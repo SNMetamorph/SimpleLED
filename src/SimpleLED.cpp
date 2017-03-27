@@ -1,25 +1,22 @@
 #include "Arduino.h"
 #include "SimpleLED.h"
 
-SimpleLED::SimpleLED(int arr[3]) 
+SimpleLED::SimpleLED(int r, int g, int b) 
 {
 	this->brightness = 255;
-	for (register int i = 0; i < 3; i++)
-		this->backcol[i] = 0;
-	memcpy(this->ledarray, arr, sizeof(arr) * 3);
-	for (register int i = 0; i < 3; i++)
-	   pinMode(arr[i], OUTPUT);
+	pins = (SL_PIN){r, g, b};
+	pinMode(pins.r, OUTPUT);
+	pinMode(pins.g, OUTPUT);
+	pinMode(pins.b, OUTPUT);
 	this->Flush();
 }
 
 void SimpleLED::SetColor(byte r, byte g, byte b)
 {
-	byte arr[3] = {r, g, b};
-	for (register int i = 0; i < 3; i++)
-	{
-	  analogWrite(this->ledarray[i], arr[i] * (brightness / 255.0));
-	}
-	memcpy(this->backcol, arr, sizeof(arr) * 3);
+	analogWrite(this->pins.r, r * (brightness / 255.0));
+	analogWrite(this->pins.g, g * (brightness / 255.0));
+	analogWrite(this->pins.b, b * (brightness / 255.0));
+	this->backcol = (SL_RGB){r, g, b};
 }
 
 void SimpleLED::SetHSVColor(float h, float s, float v) 
@@ -80,10 +77,15 @@ void SimpleLED::SetHSVColor(float h, float s, float v)
 	this->SetColor(r, g, b);
 }
 
+SL_RGB SimpleLED::GetColor()
+{
+	return this->backcol;	
+}
+
 void SimpleLED::SetBrightness(float value) 
 {
 	this->brightness = value;
-	this->SetColor(backcol[0], backcol[1], backcol[2]);
+	this->SetColor(this->backcol.r, this->backcol.g, this->backcol.b);
 }
 
 void SimpleLED::Flush()
@@ -93,38 +95,38 @@ void SimpleLED::Flush()
 
 bool SimpleLED::SetDefColor(int num)
 {
-	byte clrarr[3];
+	SL_RGB def;
 	switch(num) 
 	{
 	  case 0: 
 	  {
-		clrarr[0] = 255;
-		clrarr[1] = 255;
-		clrarr[2] = 255;
+		def.r = 255;
+		def.g = 255;
+		def.b = 255;
 		break;
 	  }
 	  
 	  case 1:
 	  {
-		clrarr[0] = 255;
-		clrarr[1] = 0;
-		clrarr[2] = 0;
+		def.r = 255;
+		def.g = 0;
+		def.b = 0;
 		break;
 	  }
 	  
 	  case 2:
 	  {
-		clrarr[0] = 0;
-		clrarr[1] = 255;
-		clrarr[2] = 0;
+		def.r = 0;
+		def.g = 255;
+		def.b = 0;
 		break;
 	  }
 	  
 	  case 3:
 	  {
-		clrarr[0] = 0;
-		clrarr[1] = 0;
-		clrarr[2] = 255;
+		def.r = 0;
+		def.g = 0;
+		def.b = 255;
 		break;
 	  }
 	  default: 
@@ -133,6 +135,6 @@ bool SimpleLED::SetDefColor(int num)
 		break;
 	  }
 	}
-	this->SetColor(clrarr[0], clrarr[1], clrarr[2]);
+	this->SetColor(def.r, def.g, def.b);
 	return true;
 }
