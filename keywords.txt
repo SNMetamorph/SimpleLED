@@ -5,7 +5,9 @@
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
-SimpleLED	KEYWORD1	SimpleLED
+SimpleLED		KEYWORD1
+SL_RGB		KEYWORD1
+SL_PIN		KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -14,6 +16,7 @@ SimpleLED	KEYWORD1	SimpleLED
 SetColor	KEYWORD2
 SetHSVColor	   KEYWORD2
 SetDefColor    KEYWORD2
+GetColor	KEYWORD2
 SetBrightness	KEYWORD2
 Flush	KEYWORD2
 
@@ -23,3 +26,7 @@ Flush	KEYWORD2
 #######################################
 # Constants (LITERAL1)
 #######################################
+SL_WHITE		LITERAL1
+SL_RED		LITETAL1
+SL_GREEN		LITERAL1
+SL_RED		LITERAL1
