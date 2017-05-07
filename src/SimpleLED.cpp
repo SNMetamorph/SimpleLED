@@ -96,45 +96,7 @@ void SimpleLED::Flush()
 bool SimpleLED::SetDefColor(int num)
 {
 	SL_RGB def;
-	switch(num) 
-	{
-	  case 0: 
-	  {
-		def.r = 255;
-		def.g = 255;
-		def.b = 255;
-		break;
-	  }
-	  
-	  case 1:
-	  {
-		def.r = 255;
-		def.g = 0;
-		def.b = 0;
-		break;
-	  }
-	  
-	  case 2:
-	  {
-		def.r = 0;
-		def.g = 255;
-		def.b = 0;
-		break;
-	  }
-	  
-	  case 3:
-	  {
-		def.r = 0;
-		def.g = 0;
-		def.b = 255;
-		break;
-	  }
-	  default: 
-	  {
-		return false;
-		break;
-	  }
-	}
+	def = defclr[num];
 	this->SetColor(def.r, def.g, def.b);
 	return true;
 }
