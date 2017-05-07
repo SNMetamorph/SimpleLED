@@ -7,28 +7,34 @@ enum {
 	SL_BLUE = 3,
 };
 
-struct SL_RGB 
+struct SL_RGB
 {
 	byte r, g, b;
 };
 
-struct SL_PIN 
+struct SL_PIN
 {
 	int r, g, b;
 };
 
-class SimpleLED 
+class SimpleLED
 {
-    public:            
+    public:
       SimpleLED(int r, int g, int b);
       void SetColor(byte r, byte g, byte b);
-	  bool SetDefColor(int num);
+      bool SetDefColor(int num);
       void SetHSVColor(float h, float s, float v);
-	  SL_RGB GetColor();
+      SL_RGB GetColor();
       void SetBrightness(float value);
       void Flush();
-	private:
+    private:
       float brightness;
-	  SL_PIN pins;
+      const SL_RGB defclr[4] = {
+	  {255, 255, 255},
+	  {255, 0, 0},
+          {0, 255, 0},
+	  {0, 0, 255},
+      };
+      SL_PIN pins;
       SL_RGB backcol = {0, 0, 0};
 };
