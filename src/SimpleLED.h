@@ -1,9 +1,11 @@
-#define SL_WHITE 0
-#define SL_RED 1
-#define SL_GREEN 2
-#define SL_BLUE 3
-
 #pragma once
+
+enum {
+	SL_WHITE = 0,
+	SL_RED = 1,
+	SL_GREEN = 2,
+	SL_BLUE = 3,
+};
 
 struct SL_RGB 
 {
