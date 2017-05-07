@@ -3,6 +3,8 @@
 #define SL_GREEN 2
 #define SL_BLUE 3
 
+#pragma once
+
 struct SL_RGB 
 {
 	byte r, g, b;
