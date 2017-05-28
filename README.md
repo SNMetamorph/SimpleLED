@@ -84,8 +84,11 @@ void loop()
 # Объявленные цвета
 Конструктив раздела: название директивы цвета - число для цвета - эквивалент функции SetColor().<br>
 Пример использования таких цветов в коде: obj.SetDefColor(SL_GREEN) или obj.SetDefColor(2), также можно использовать obj.SetColor(0, 255, 0)<br>
-SL_WHITE - 0 - obj.SetColor(255, 255, 255)<br>
-SL_RED - 1 - obj.SetColor(255, 0, 0)<br>
-SL_GREEN - 2 - obj.SetColor(0, 255, 0)<br>
-SL_BLUE - 3 - obj.SetColor(0, 0, 255)<br>
+
+```c++
+SL_WHITE - 0 - obj.SetColor(255, 255, 255)
+SL_RED - 1 - obj.SetColor(255, 0, 0)
+SL_GREEN - 2 - obj.SetColor(0, 255, 0)
+SL_BLUE - 3 - obj.SetColor(0, 0, 255)
+```
 
