@@ -1,10 +1,10 @@
 #pragma once
 
 enum {
-	SL_WHITE = 0,
-	SL_RED = 1,
-	SL_GREEN = 2,
-	SL_BLUE = 3,
+	SL_WHITE,
+	SL_RED,
+	SL_GREEN,
+	SL_BLUE,
 };
 
 struct SL_RGB
