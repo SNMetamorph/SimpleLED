@@ -26,14 +26,14 @@ class SimpleLED
       void SetHSVColor(float h, float s, float v);
       SL_RGB GetColor();
       void SetBrightness(float value);
-      void Flush();
+      void Flush() { SetColor(0, 0, 0); };
     private:
       float brightness;
       const SL_RGB defclr[4] = {
-	  {255, 255, 255},
-	  {255, 0, 0},
-          {0, 255, 0},
-	  {0, 0, 255},
+		  {255, 255, 255},
+		  {255, 0, 0},
+		  {0, 255, 0},
+		  {0, 0, 255},
       };
       SL_PIN pins;
       SL_RGB backcol = {0, 0, 0};
