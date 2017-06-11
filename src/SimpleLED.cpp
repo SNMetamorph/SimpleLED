@@ -3,20 +3,20 @@
 
 SimpleLED::SimpleLED(int r, int g, int b) 
 {
-	this->brightness = 255;
+	brightness = 255;
 	pins = (SL_PIN){r, g, b};
 	pinMode(pins.r, OUTPUT);
 	pinMode(pins.g, OUTPUT);
 	pinMode(pins.b, OUTPUT);
-	this->Flush();
+	Flush();
 }
 
 void SimpleLED::SetColor(byte r, byte g, byte b)
 {
-	analogWrite(this->pins.r, r * (brightness / 255.0));
-	analogWrite(this->pins.g, g * (brightness / 255.0));
-	analogWrite(this->pins.b, b * (brightness / 255.0));
-	this->backcol = (SL_RGB){r, g, b};
+	analogWrite(pins.r, r * (brightness / 255.0));
+	analogWrite(pins.g, g * (brightness / 255.0));
+	analogWrite(pins.b, b * (brightness / 255.0));
+	backcol = (SL_RGB){r, g, b};
 }
 
 void SimpleLED::SetHSVColor(float h, float s, float v) 
@@ -74,29 +74,24 @@ void SimpleLED::SetHSVColor(float h, float s, float v)
       g = round(255*p);
       b = round(255*q);
     }
-	this->SetColor(r, g, b);
+	SetColor(r, g, b);
 }
 
 SL_RGB SimpleLED::GetColor()
 {
-	return this->backcol;	
+	return backcol;	
 }
 
 void SimpleLED::SetBrightness(float value) 
 {
-	this->brightness = value;
-	this->SetColor(this->backcol.r, this->backcol.g, this->backcol.b);
-}
-
-void SimpleLED::Flush()
-{
-	this->SetColor(0, 0, 0);
+	brightness = value;
+	SetColor(backcol.r, backcol.g, backcol.b);
 }
 
 bool SimpleLED::SetDefColor(int num)
 {
 	SL_RGB def;
 	def = defclr[num];
-	this->SetColor(def.r, def.g, def.b);
+	SetColor(def.r, def.g, def.b);
 	return true;
 }
