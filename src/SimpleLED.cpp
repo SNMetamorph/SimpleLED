@@ -77,11 +77,6 @@ void SimpleLED::SetHSVColor(float h, float s, float v)
 	SetColor(r, g, b);
 }
 
-SL_RGB SimpleLED::GetColor()
-{
-	return backcol;	
-}
-
 void SimpleLED::SetBrightness(float value) 
 {
 	brightness = value;
