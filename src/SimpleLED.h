@@ -24,7 +24,7 @@ class SimpleLED
       void SetColor(byte r, byte g, byte b);
       bool SetDefColor(int num);
       void SetHSVColor(float h, float s, float v);
-      SL_RGB GetColor();
+      SL_RGB GetColor() { return backcol; }; 
       void SetBrightness(float value);
       void Flush() { SetColor(0, 0, 0); };
     private:
