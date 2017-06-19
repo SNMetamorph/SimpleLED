@@ -30,11 +30,11 @@ void loop()
 Внимание! Используйте только подходящие по напряжению блоки питания, иначе вы можете сжечь вашу ленту.<br>
 Схема для использования с лентами:
 
-![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/mosfetscheme.png?raw=true)
+![Preview](http://i.imgur.com/JCjWYK9.png)
 
 Схема для использования с группами светодиодов:
 
-![Preview](https://github.com/SNMetamorph/SimpleLED/blob/master/ledscheme.png?raw=true)
+![Preview](http://i.imgur.com/TqwseeC.png)
 
 # Установка
 Для начала, скачайте архив этого репозитория (нажмите <a href="https://github.com/SNMetamorph/SimpleLED/archive/master.zip">сюда</a>).<br> 
