@@ -26,18 +26,14 @@ void loop()
 ```
 ## Использование динамичного изменения с пк
 ```c++
-void setup() 
-{
-  int n = 0; // Переменная, содержащая информацию о заполнении массива цветов
-}
 void loop() 
 {  
-  if(Serial.available() > 0)
+  if(Serial.available() > 0) //При доступности данных
   {
     byte incomingBytes[3];
-    Serial.readBytes(incomingBytes, 3);
-    SimpleLED.SetColor(incomingBytes[0], incomingBytes[1], incomingBytes[2]);
-    delete incomingBytes;
+    Serial.readBytes(incomingBytes, 3); // Считывание байтов
+    SimpleLED.SetColor(incomingBytes[0], incomingBytes[1], incomingBytes[2]); // Назначение цвета
+    delete incomingBytes; // Очищение памяти
   }
 }
 ```
