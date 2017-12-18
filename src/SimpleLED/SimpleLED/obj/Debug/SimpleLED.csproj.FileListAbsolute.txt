@@ -1,0 +1,11 @@
+D:\Projects\C#\SimpleLED\SimpleLED\bin\Debug\SimpleLED.exe
+D:\Projects\C#\SimpleLED\SimpleLED\bin\Debug\SimpleLED.pdb
+D:\Projects\C#\SimpleLED\SimpleLED\obj\Debug\MainWindow.baml
+D:\Projects\C#\SimpleLED\SimpleLED\obj\Debug\MainWindow.g.cs
+D:\Projects\C#\SimpleLED\SimpleLED\obj\Debug\App.g.cs
+D:\Projects\C#\SimpleLED\SimpleLED\obj\Debug\SimpleLED_MarkupCompile.cache
+D:\Projects\C#\SimpleLED\SimpleLED\obj\Debug\SimpleLED.g.resources
+D:\Projects\C#\SimpleLED\SimpleLED\obj\Debug\SimpleLED.Properties.Resources.resources
+D:\Projects\C#\SimpleLED\SimpleLED\obj\Debug\SimpleLED.csproj.GenerateResource.Cache
+D:\Projects\C#\SimpleLED\SimpleLED\obj\Debug\SimpleLED.exe
+D:\Projects\C#\SimpleLED\SimpleLED\obj\Debug\SimpleLED.pdb
