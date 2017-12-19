@@ -24,10 +24,22 @@ namespace SimpleLED
         public MainWindow()
         {
             InitializeComponent();
+            RefreshPortList();
             previewRect.Fill = Brushes.Black;
             previewLabel.Content = "R: 0" + ", " + "G: 0" + ", " + "B: 0";
         }
-
+        void RefreshPortList()
+        {
+            string[] ports = SerialPort.GetPortNames();
+            comBox.Dispatcher.BeginInvoke(new Action(delegate()
+            {
+                comBox.Items.Clear();
+                for (int i = 0; i < ports.Length; i++)
+                {
+                    comBox.Items.Add(ports[i]);
+                } 
+            }));
+        }
         private void ColorChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             SolidColorBrush scb = new SolidColorBrush(Color.FromRgb((byte)redSlider.Value, (byte)greenSlider.Value, (byte)blueSlider.Value));
@@ -51,6 +63,11 @@ namespace SimpleLED
                 log.Content = "Successfully sended";
             }
             serial.Close();
+        }
+
+        private void comBox_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            RefreshPortList();
         }
     }
 }

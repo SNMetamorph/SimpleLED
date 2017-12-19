@@ -17,18 +17,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label Content="Port : " Grid.ColumnSpan="3"/>
-        <ComboBox x:Name="comBox" Grid.Column="1" Text="Port">
-            <ComboBoxItem Name="com1" Content="COM1"/>
-            <ComboBoxItem Name="com2" Content="COM2"/>
-            <ComboBoxItem Name="com3" Content="COM3"/>
-            <ComboBoxItem Name="com4" Content="COM4"/>
-            <ComboBoxItem Name="com5" Content="COM5"/>
-            <ComboBoxItem Name="com6" Content="COM6"/>
-            <ComboBoxItem Name="com7" Content="COM7"/>
-            <ComboBoxItem Name="com8" Content="COM8"/>
-            <ComboBoxItem Name="com9" Content="COM9"/>
-            <ComboBoxItem Name="com10" Content="COM10"/>
-        </ComboBox>
+        <ComboBox x:Name="comBox" Grid.Column="1" Text="Port" MouseDown="comBox_MouseDown"/>
         <Label Content="Red: " Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="Green: " Grid.Row="1" VerticalAlignment="Center" Margin="0,25,0,24"/>
         <Label Content="Blue: " Grid.Row="1" VerticalAlignment="Bottom"/>
