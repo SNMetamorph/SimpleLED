@@ -33,7 +33,6 @@ void loop()
     byte incomingBytes[3];
     Serial.readBytes(incomingBytes, 3); // Считывание байтов
     SimpleLED.SetColor(incomingBytes[0], incomingBytes[1], incomingBytes[2]); // Назначение цвета
-    delete incomingBytes; // Очищение памяти
   }
 }
 ```
